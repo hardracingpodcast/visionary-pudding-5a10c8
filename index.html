@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hard Racing Podcast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1b33;--surface:#1a2a4a;--text:#f4f6fa;--muted:#a9b6cf;--flare:#ff4a1c;--line:#2c406b;
+ --head:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;--body:"Barlow",system-ui,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#0f1b33;--surface:#1a2a4a;--text:#f4f6fa;--muted:#a9b6cf;--flare:#ff4a1c;--line:#2c406b}}
+:root[data-theme="dark"]{--bg:#0f1b33;--surface:#1a2a4a;--text:#f4f6fa;--muted:#a9b6cf;--flare:#ff4a1c;--line:#2c406b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--flare);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+nav .mini{width:170px}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;font-weight:600}
+nav a{text-decoration:none}nav a:hover{color:var(--flare)}
+.hero{padding:3rem 0 4rem;border-bottom:4px solid var(--flare)}
+.hero svg{width:min(100%,920px);height:auto;display:block}
+.hero p.tag{font:900 clamp(1.1rem,4.6vw,2.6rem)/1.05 var(--head);font-style:italic;margin:.4rem 0 .75rem;white-space:nowrap;text-transform:uppercase}
+.hero p.brand{color:var(--flare);font-weight:600;margin:1.5rem 0 0}
+.hero p.sub{max-width:52ch;color:var(--muted);margin:0 0 1.75rem}
+.btn{display:inline-block;background:var(--flare);color:#fff;font:800 1.2rem var(--head);letter-spacing:.04em;padding:.7rem 1.6rem;text-decoration:none;transform:skewX(-14deg);border:0;cursor:pointer}
+.btn span{display:inline-block;transform:skewX(14deg)}
+.btn.alt{background:transparent;border:2px solid var(--text);color:var(--text);margin-left:.5rem}
+h2{font:900 clamp(2rem,5vw,3rem)/1 var(--head);font-style:italic;text-transform:uppercase;margin:0 0 1.5rem}
+section{padding:3.5rem 0}
+.eps{display:grid;gap:1.25rem}
+.ep{background:var(--surface);border-left:6px solid var(--flare);padding:1.25rem}
+.ep h3{margin:0 0 .25rem;font:800 1.5rem var(--head)}
+.ep p{margin:0 0 .75rem;color:var(--muted)}
+.ep iframe{width:100%;border:0;border-radius:12px;display:block}
+.empty{border:2px dashed var(--line);padding:1.5rem;color:var(--muted)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.cols div{border-top:4px solid var(--text);padding-top:1rem}
+.cols h3{font:800 1.6rem var(--head);margin:0 0 .4rem}
+.cols p{margin:0;color:var(--muted)}
+.tool{background:var(--surface);padding:1.25rem;margin-top:2rem}
+.tool label{font-weight:600;display:block;margin-bottom:.5rem}
+.tool .row{display:flex;gap:.75rem;flex-wrap:wrap}
+.tool input{flex:1 1 260px;padding:.7rem;font:inherit;background:var(--bg);color:var(--text);border:2px solid var(--line)}
+.tool iframe{width:100%;border:0;border-radius:12px;margin-top:1rem}
+.tool .msg{color:var(--muted);margin:.75rem 0 0;font-size:.95rem}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
+.streak{animation:run .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes run{from{transform:translateX(-80px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.streak{animation:none}html{scroll-behavior:auto}}
+@media (max-width:560px){nav ul{gap:1rem;font-size:.95rem}nav .mini{width:120px}.btn.alt{margin:.75rem 0 0}}
+</style>
+</head>
+<body>
+
+<!-- LOGO (reused). Skewed slab wordmark, speed cuts through the letters, a slid-out track arc with a flare. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="logo" viewBox="0 0 1000 230">
+  <g class="streak">
+   <rect x="0" y="44" width="70" height="9" fill="var(--flare)"/>
+   <rect x="22" y="68" width="48" height="9" fill="var(--flare)"/>
+   <rect x="0" y="92" width="70" height="9" fill="var(--flare)"/>
+   <rect x="34" y="116" width="36" height="9" fill="var(--flare)"/>
+  </g>
+  <g transform="skewX(-14) translate(52 0)">
+   <text x="64" y="150" font-family="'Big Shoulders Display',Impact,'Arial Narrow',sans-serif" font-weight="900" font-size="168" textLength="840" lengthAdjust="spacingAndGlyphs" fill="#fff">HARD RACING</text>
+   <path d="M60 99H940M60 111H940" stroke="var(--bg)" stroke-width="5"/>
+  </g>
+  <path d="M96 182C330 158 650 156 880 196" fill="none" stroke="var(--flare)" stroke-width="10" stroke-linecap="butt"/>
+  <path d="M880 196l56-26-30 44z" fill="var(--flare)"/>
+  <text x="104" y="222" font-family="'Big Shoulders Display',Impact,sans-serif" font-weight="800" font-size="30" letter-spacing="14" fill="#fff" font-style="italic">PODCAST</text>
+ </symbol>
+</svg>
+
+<header class="wrap">
+ <nav aria-label="Main">
+  <a href="#top" aria-label="Hard Racing Podcast home"><svg class="mini" viewBox="0 0 1000 230" role="img" aria-label="Hard Racing Podcast logo"><use href="#logo"/></svg></a>
+  <ul><li><a href="#episodes">Episodes</a></li><li><a href="#about">About</a></li><li><a href="#listen">Listen</a></li></ul>
+ </nav>
+</header>
+
+<main id="top">
+ <div class="wrap hero">
+  <svg viewBox="0 0 1000 230" role="img" aria-label="Hard Racing Podcast"><use href="#logo"/></svg>
+  <p class="brand">Speedway</p>
+  <p class="tag">Crump &amp; Schlein: No Brakes No Filter</p>
+  <p class="sub">3x World Speedway Champion Jason Crump and speedway legend Rory Schlein join Ian Brannan and big name guests. Expect honest opinions and real insight from the people who know what's going on and what it takes to get to the top.</p>
+  <a class="btn" href="#episodes"><span>Play latest</span></a><a class="btn alt" href="#listen"><span>Subscribe</span></a>
+ </div>
+
+ <section id="episodes" class="wrap">
+  <h2>Episodes</h2>
+  <div class="eps" id="eps"></div>
+
+  <div class="tool">
+   <label for="spurl">Add an episode: paste any Spotify episode, show or playlist link</label>
+   <div class="row"><input id="spurl" type="url" placeholder="https://open.spotify.com/episode/..."><button class="btn" id="spgo" type="button"><span>Preview</span></button></div>
+   <p class="msg" id="spmsg">To publish it permanently, add the link to the <code>EPISODES</code> list at the top of the page's script.</p>
+   <div id="spout"></div>
+  </div>
+ </section>
+
+ <section id="about" class="wrap">
+  <h2>About the show</h2>
+  <p style="max-width:62ch;margin-top:0">Hard Racing is for people who love racing on the edge: speedway bikes sliding sideways round a shale oval with a single gear and no brakes. Each episode brings race reviews, rider talk and a look at what is coming up. When the story is bigger than speedway, we follow it onto the MotoGP grid and the Superbike paddock.</p>
+  <div class="cols" style="margin-top:2rem">
+   <div><h3>Speedway</h3><p>Our home track. League racing, Grand Prix, the riders and the rivalries.</p></div>
+   <div><h3>MotoGP</h3><p>The sport's top class, covered when it throws up a story worth the airtime.</p></div>
+   <div><h3>Superbikes</h3><p>Production-based machines and close racing, from the paddock to the podium.</p></div>
+  </div>
+ </section>
+
+ <section id="listen" class="wrap">
+  <h2>Listen everywhere</h2>
+  <p style="margin-top:0;color:var(--muted)">New episodes land on all the usual platforms.</p>
+  <a class="btn" id="l-spotify" href="#"><span>Spotify</span></a>
+  <a class="btn alt" id="l-apple" href="#"><span>Apple Podcasts</span></a>
+ </section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr"></span> Hard Racing Podcast. Not affiliated with any racing governing body.</div></footer>
+
+<script>
+// ===== EDIT HERE =====
+// Add each episode as { title, blurb, spotify } where spotify is any open.spotify.com link.
+const EPISODES = [
+  // { title: "Episode 1: Season opener", blurb: "What we saw and who impressed.", spotify: "https://open.spotify.com/episode/XXXXXXXX" },
+];
+const LINKS = { spotify: "#", apple: "#" }; // your show URLs
+// =====================
+
+function embedUrl(link){
+  try{
+    const u = new URL(link.trim());
+    if(u.hostname !== "open.spotify.com") return null;
+    const m = u.pathname.match(/\/(?:intl-[a-z]+\/)?(episode|show|playlist|track|album)\/([A-Za-z0-9]+)/);
+    return m ? "https://open.spotify.com/embed/" + m[1] + "/" + m[2] + "?theme=0" : null;
+  }catch(e){return null}
+}
+function frame(src, h){
+  const f = document.createElement("iframe");
+  f.src = src; f.height = h; f.loading = "lazy"; f.title = "Spotify player";
+  f.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+  return f;
+}
+const eps = document.getElementById("eps");
+const valid = EPISODES.filter(e => embedUrl(e.spotify));
+if(!valid.length){
+  eps.innerHTML = '<div class="empty">No episodes yet. Add your first Spotify link below, or in the EPISODES list in the page code.</div>';
+}
+valid.forEach(e => {
+  const d = document.createElement("article"); d.className = "ep";
+  const h = document.createElement("h3"); h.textContent = e.title;
+  const p = document.createElement("p"); p.textContent = e.blurb || "";
+  d.append(h, p, frame(embedUrl(e.spotify), 152));
+  eps.append(d);
+});
+document.getElementById("spgo").addEventListener("click", () => {
+  const out = document.getElementById("spout"), msg = document.getElementById("spmsg");
+  out.innerHTML = "";
+  const src = embedUrl(document.getElementById("spurl").value);
+  if(!src){ msg.textContent = "That doesn't look like a Spotify link. Copy it from Spotify with Share, then Copy link."; return; }
+  out.append(frame(src, 152));
+  msg.textContent = "Preview only. Add the link to the EPISODES list to keep it on the site.";
+});
+document.getElementById("l-spotify").href = LINKS.spotify;
+document.getElementById("l-apple").href = LINKS.apple;
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
