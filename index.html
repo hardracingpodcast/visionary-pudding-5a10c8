@@ -49,8 +49,10 @@ section{padding:3.5rem 0}
 .tool input{flex:1 1 260px;padding:.7rem;font:inherit;background:var(--bg);color:var(--text);border:2px solid var(--line)}
 .tool iframe{width:100%;border:0;border-radius:12px;margin-top:1rem}
 .tool .msg{color:var(--muted);margin:.75rem 0 0;font-size:.95rem}
-#episodes{padding-bottom:5.5rem}
-#listen{padding-top:5rem}
+#episodes{padding-top:5rem;padding-bottom:5.5rem}
+#about{padding-bottom:4.25rem}
+#listen{padding-top:4.25rem}
+.bar{height:4px;background:var(--flare)}
 footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
 .streak{animation:run .9s cubic-bezier(.2,.8,.2,1) both}
 @keyframes run{from{transform:translateX(-80px);opacity:0}to{transform:none;opacity:1}}
@@ -110,6 +112,8 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
    <div><h3>Superbikes</h3><p>Production-based machines and close racing, from the paddock to the podium.</p></div>
   </div>
  </section>
+
+ <div class="wrap"><div class="bar" role="presentation"></div></div>
 
  <section id="listen" class="wrap">
   <h2>Listen everywhere</h2>
