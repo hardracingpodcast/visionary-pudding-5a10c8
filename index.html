@@ -95,14 +95,8 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 
  <section id="episodes" class="wrap">
   <h2>Episodes</h2>
-  <div class="eps" id="eps"></div>
-
-  <div class="tool">
-   <label for="spurl">Add an episode: paste any Spotify episode, show or playlist link</label>
-   <div class="row"><input id="spurl" type="url" placeholder="https://open.spotify.com/episode/..."><button class="btn" id="spgo" type="button"><span>Preview</span></button></div>
-   <p class="msg" id="spmsg">To publish it permanently, add the link to the <code>EPISODES</code> list at the top of the page's script.</p>
-   <div id="spout"></div>
-  </div>
+  <p style="color:var(--muted);margin:0 0 1.25rem">Every episode, straight from Spotify. New episodes appear here automatically.</p>
+  <article class="ep"><iframe id="show" src="https://open.spotify.com/embed/show/7z6dXym2uQsc5xhXx0hBrW?utm_source=generator&amp;theme=0" width="100%" height="352" style="border:0;border-radius:12px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Hard Racing podcast on Spotify"></iframe></article>
  </section>
 
  <section id="about" class="wrap">
@@ -126,52 +120,10 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 <footer><div class="wrap">&copy; <span id="yr"></span> Hard Racing Podcast. Not affiliated with any racing governing body.</div></footer>
 
 <script>
-// ===== EDIT HERE =====
-// Add each episode as { title, blurb, spotify } where spotify is any open.spotify.com link.
-const EPISODES = [
-  // { title: "Episode 1: Season opener", blurb: "What we saw and who impressed.", spotify: "https://open.spotify.com/episode/XXXXXXXX" },
-];
-const LINKS = { spotify: "#", apple: "#" }; // your show URLs
-// =====================
-
-function embedUrl(link){
-  try{
-    const u = new URL(link.trim());
-    if(u.hostname !== "open.spotify.com") return null;
-    const m = u.pathname.match(/\/(?:intl-[a-z]+\/)?(episode|show|playlist|track|album)\/([A-Za-z0-9]+)/);
-    return m ? "https://open.spotify.com/embed/" + m[1] + "/" + m[2] + "?theme=0" : null;
-  }catch(e){return null}
-}
-function frame(src, h){
-  const f = document.createElement("iframe");
-  f.src = src; f.height = h; f.loading = "lazy"; f.title = "Spotify player";
-  f.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-  return f;
-}
-const eps = document.getElementById("eps");
-const valid = EPISODES.filter(e => embedUrl(e.spotify));
-if(!valid.length){
-  eps.innerHTML = '<div class="empty">No episodes yet. Add your first Spotify link below, or in the EPISODES list in the page code.</div>';
-}
-valid.forEach(e => {
-  const d = document.createElement("article"); d.className = "ep";
-  const h = document.createElement("h3"); h.textContent = e.title;
-  const p = document.createElement("p"); p.textContent = e.blurb || "";
-  d.append(h, p, frame(embedUrl(e.spotify), 152));
-  eps.append(d);
-});
-document.getElementById("spgo").addEventListener("click", () => {
-  const out = document.getElementById("spout"), msg = document.getElementById("spmsg");
-  out.innerHTML = "";
-  const src = embedUrl(document.getElementById("spurl").value);
-  if(!src){ msg.textContent = "That doesn't look like a Spotify link. Copy it from Spotify with Share, then Copy link."; return; }
-  out.append(frame(src, 152));
-  msg.textContent = "Preview only. Add the link to the EPISODES list to keep it on the site.";
-});
+const LINKS = { spotify: "https://open.spotify.com/show/7z6dXym2uQsc5xhXx0hBrW", apple: "#" }; // add your Apple Podcasts link
 document.getElementById("l-spotify").href = LINKS.spotify;
 document.getElementById("l-apple").href = LINKS.apple;
 document.getElementById("yr").textContent = new Date().getFullYear();
-
 </script>
 </body>
 </html>
