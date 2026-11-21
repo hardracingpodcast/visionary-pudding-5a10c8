@@ -49,6 +49,7 @@ section{padding:3.5rem 0}
 .tool input{flex:1 1 260px;padding:.7rem;font:inherit;background:var(--bg);color:var(--text);border:2px solid var(--line)}
 .tool iframe{width:100%;border:0;border-radius:12px;margin-top:1rem}
 .tool .msg{color:var(--muted);margin:.75rem 0 0;font-size:.95rem}
+#episodes{padding-bottom:5.5rem}
 footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
 .streak{animation:run .9s cubic-bezier(.2,.8,.2,1) both}
 @keyframes run{from{transform:translateX(-80px);opacity:0}to{transform:none;opacity:1}}
@@ -112,17 +113,19 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
  <section id="listen" class="wrap">
   <h2>Listen everywhere</h2>
   <p style="margin-top:0;color:var(--muted)">New episodes land on all the usual platforms.</p>
-  <a class="btn" id="l-spotify" href="#"><span>Spotify</span></a>
-  <a class="btn alt" id="l-apple" href="#"><span>Apple Podcasts</span></a>
+  <a class="btn" id="l-spotify" href="#" target="_blank" rel="noopener"><span>Spotify</span></a>
+  <a class="btn alt" id="l-apple" href="#" target="_blank" rel="noopener"><span>Apple Podcasts</span></a>
+  <a class="btn alt" id="l-yt" href="#" target="_blank" rel="noopener"><span>YouTube</span></a>
  </section>
 </main>
 
 <footer><div class="wrap">&copy; <span id="yr"></span> Hard Racing Podcast. Not affiliated with any racing governing body.</div></footer>
 
 <script>
-const LINKS = { spotify: "https://open.spotify.com/show/7z6dXym2uQsc5xhXx0hBrW", apple: "#" }; // add your Apple Podcasts link
+const LINKS = { spotify: "https://open.spotify.com/show/7z6dXym2uQsc5xhXx0hBrW", apple: "https://podcasts.apple.com/gb/podcast/hard-racing-podcast/id6837315039", youtube: "https://www.youtube.com/@HardRacingPodcast" };
 document.getElementById("l-spotify").href = LINKS.spotify;
 document.getElementById("l-apple").href = LINKS.apple;
+document.getElementById("l-yt").href = LINKS.youtube;
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
