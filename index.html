@@ -50,6 +50,7 @@ section{padding:3.5rem 0}
 .tool iframe{width:100%;border:0;border-radius:12px;margin-top:1rem}
 .tool .msg{color:var(--muted);margin:.75rem 0 0;font-size:.95rem}
 #episodes{padding-bottom:5.5rem}
+#listen{padding-top:5rem}
 footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
 .streak{animation:run .9s cubic-bezier(.2,.8,.2,1) both}
 @keyframes run{from{transform:translateX(-80px);opacity:0}to{transform:none;opacity:1}}
@@ -97,7 +98,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
  <section id="episodes" class="wrap">
   <h2>Episodes</h2>
   <p style="color:var(--muted);margin:0 0 1.25rem">Every episode, straight from Spotify. New episodes appear here automatically.</p>
-  <article class="ep"><iframe id="show" src="https://open.spotify.com/embed/show/7z6dXym2uQsc5xhXx0hBrW?utm_source=generator&amp;theme=0" width="100%" height="352" style="border:0;border-radius:12px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Hard Racing podcast on Spotify"></iframe></article>
+  <article class="ep"><iframe id="show" data-testid="embed-iframe" src="https://open.spotify.com/embed/show/7z6dXym2uQsc5xhXx0hBrW/video?utm_source=generator&amp;si=db5e87d267454a6a" width="496" height="279" style="width:100%;max-width:720px;height:auto;aspect-ratio:16/9;border:0;border-radius:12px;display:block" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Hard Racing podcast on Spotify"></iframe></article>
  </section>
 
  <section id="about" class="wrap">
